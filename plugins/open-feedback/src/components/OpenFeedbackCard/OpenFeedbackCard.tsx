@@ -19,7 +19,7 @@ import Skeleton from '@mui/material/Skeleton';
 import {
   AppFeedback,
   openFeedbackPageDeletePermission,
-} from '@parsifal-m/backstage-plugin-open-feedback-common';
+} from '@baicheng-michael/backstage-plugin-open-feedback-common';
 import { usePermission } from '@backstage/plugin-permission-react';
 
 export const FeedbackCards = () => {

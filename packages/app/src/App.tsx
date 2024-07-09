@@ -41,7 +41,7 @@ import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import {
   OpenFeedbackModal,
   OpenFeedbackPage,
-} from '@parsifal-m/backstage-plugin-open-feedback';
+} from '@baicheng-michael/backstage-plugin-open-feedback';
 
 const app = createApp({
   components: {

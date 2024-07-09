@@ -11,7 +11,7 @@ import express, { Request, Response } from 'express';
 import Router from 'express-promise-router';
 import { body } from 'express-validator';
 import { OpenFeedbackDatabaseHandler } from '../database/DatabaseHandler';
-import { SubmitFeedback } from '@parsifal-m/backstage-plugin-open-feedback-common';
+import { SubmitFeedback } from '@baicheng-michael/backstage-plugin-open-feedback-common';
 
 export interface RouterOptions {
   databaseHandler: OpenFeedbackDatabaseHandler;

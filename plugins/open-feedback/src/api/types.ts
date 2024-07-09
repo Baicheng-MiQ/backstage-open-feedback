@@ -2,7 +2,7 @@ import { createApiRef } from '@backstage/core-plugin-api';
 import {
   AppFeedback,
   SubmitFeedback,
-} from '@parsifal-m/backstage-plugin-open-feedback-common';
+} from '@baicheng-michael/backstage-plugin-open-feedback-common';
 
 export interface OpenFeedbackBackendApi {
   getFeedback(): Promise<AppFeedback[]>;

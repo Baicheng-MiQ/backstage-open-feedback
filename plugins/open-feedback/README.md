@@ -24,7 +24,7 @@ To use the `OpenFeedbackModal` component, you will need to add it to your `packa
 Clicking on it will open a dialog box for users to send feedback.
 
 ```typescript
-import { OpenFeedbackModal } from '@parsifal-m/backstage-plugin-open-feedback';
+import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedback';
 
 // Inside your Root component
 <Sidebar>

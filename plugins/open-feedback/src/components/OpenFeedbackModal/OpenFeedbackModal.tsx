@@ -18,7 +18,7 @@ import Rating from '@mui/material/Rating';
 import React, { useEffect, useState } from 'react';
 import { openFeedbackBackendRef } from '../../api/types';
 import useAsyncFn from 'react-use/esm/useAsyncFn';
-import { SubmitFeedback } from '@parsifal-m/backstage-plugin-open-feedback-common';
+import { SubmitFeedback } from '@baicheng-michael/backstage-plugin-open-feedback-common';
 import { SidebarItem } from '@backstage/core-components';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 

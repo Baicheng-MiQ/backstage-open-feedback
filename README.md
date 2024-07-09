@@ -46,11 +46,11 @@ Run the following yarn commands to add all the required packages to your Backsta
 From the root of your repository you can run the following commands:
 
 ```bash
-yarn --cwd packages/app add @parsifal-m/backstage-plugin-open-feedback
+yarn --cwd packages/app add @baicheng-michael/backstage-plugin-open-feedback
 ```
 
 ```bash
-yarn --cwd packages/backend add @parsifal-m/backstage-plugin-open-feedback-backend
+yarn --cwd packages/backend add @baicheng-michael/backstage-plugin-open-feedback-backend
 ```
 
 ## Adding the OpenFeedback Backend to your Backstage Application
@@ -63,7 +63,7 @@ import { createBackend } from '@backstage/backend-defaults';
 const backend = createBackend();
 
 // Other plugins
-backend.add(import('@parsifal-m/backstage-plugin-open-feedback-backend'));
+backend.add(import('@baicheng-michael/backstage-plugin-open-feedback-backend'));
 
 backend.start();
 ```
@@ -90,7 +90,7 @@ To use the `OpenFeedbackModal` component, you will need to add it to your `packa
 Clicking on it will open a dialog box for users to send feedback.
 
 ```typescript
-import { OpenFeedbackModal } from '@parsifal-m/backstage-plugin-open-feedback';
+import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedback';
 
 // Inside your Root component
 <Sidebar>

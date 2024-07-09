@@ -1,7 +1,7 @@
 import {
   AppFeedback,
   SubmitFeedback,
-} from '@parsifal-m/backstage-plugin-open-feedback-common';
+} from '@baicheng-michael/backstage-plugin-open-feedback-common';
 import { OpenFeedbackBackendApi } from './types';
 import { FetchApi } from '@backstage/core-plugin-api';
 

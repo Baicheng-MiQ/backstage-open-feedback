@@ -12,7 +12,7 @@ import { createBackend } from '@backstage/backend-defaults';
 const backend = createBackend();
 
 // Other plugins
-backend.add(import('@parsifal-m/backstage-plugin-open-feedback-backend'));
+backend.add(import('@baicheng-michael/backstage-plugin-open-feedback-backend'));
 
 backend.start();
 ```
