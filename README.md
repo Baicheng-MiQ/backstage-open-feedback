@@ -90,6 +90,7 @@ To use the `OpenFeedbackModal` component, you will need to add it to your `packa
 Clicking on it will open a dialog box for users to send feedback.
 
 In the sidebar
+
 ```typescript
 import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedback';
 
@@ -102,16 +103,16 @@ import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedb
 ```
 
 Floating button
+
 ```typescript
 import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedback';
 
 // Anywhere
-<OpenFeedbackModal floating
-  style={{ position: 'fixed', bottom: 20, right: 20}}
-/>
+<OpenFeedbackModal
+  floating
+  style={{ position: 'fixed', bottom: 20, right: 20 }}
+/>;
 ```
-
-
 
 ## Using the OpenFeedbackForm Component
 
