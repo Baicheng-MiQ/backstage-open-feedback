@@ -5274,7 +5274,7 @@ __metadata:
     "@backstage/config": "npm:^1.2.0"
     "@backstage/plugin-auth-backend": "npm:^0.22.8"
     "@backstage/plugin-auth-backend-module-guest-provider": "npm:^0.1.7"
-    "@baicheng-michael/backstage-plugin-open-feedback-common": "npm:0.3.0"
+    "@baicheng-michael/backstage-plugin-open-feedback-common": "npm:^0.3.0"
     "@types/express": "npm:*"
     "@types/supertest": "npm:^2.0.12"
     express: "npm:^4.17.1"
@@ -5289,7 +5289,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@baicheng-michael/backstage-plugin-open-feedback-common@npm:0.3.0, @baicheng-michael/backstage-plugin-open-feedback-common@workspace:plugins/open-feedback-common":
+"@baicheng-michael/backstage-plugin-open-feedback-common@npm:^0.3.0, @baicheng-michael/backstage-plugin-open-feedback-common@workspace:plugins/open-feedback-common":
   version: 0.0.0-use.local
   resolution: "@baicheng-michael/backstage-plugin-open-feedback-common@workspace:plugins/open-feedback-common"
   dependencies:
@@ -5310,7 +5310,7 @@ __metadata:
     "@backstage/plugin-permission-react": "npm:^0.4.23"
     "@backstage/test-utils": "npm:^1.5.7"
     "@backstage/theme": "npm:^0.5.6"
-    "@baicheng-michael/backstage-plugin-open-feedback-common": "npm:0.3.0"
+    "@baicheng-michael/backstage-plugin-open-feedback-common": "npm:^0.3.0"
     "@material-ui/core": "npm:^4.9.13"
     "@material-ui/icons": "npm:^4.9.1"
     "@material-ui/lab": "npm:4.0.0-alpha.61"
