@@ -118,10 +118,26 @@ import { OpenFeedbackModal } from '@baicheng-michael/backstage-plugin-open-feedb
 
 I would recommend using the `OpenFeedbackForm` on the [Backstage HomePage](https://backstage.io/docs/getting-started/homepage/#homepage) to collect feedback from users. This component can be added to any page, but it is more specifically designed for the Backstage HomePage.
 
+# Building
+
+```bash
+cd plugins/open-feedback # or plugins/open-feedback-backend or plugins/open-feedback-common
+make build
+```
+
 # Publishing
 ```bash
 cd plugins/open-feedback # or plugins/open-feedback-backend or plugins/open-feedback-common
 make publish
+```
+
+# TroubleShooting
+## Build Error or strange behavior
+```bash
+rm -rf node_modules
+rm -rf dist-types
+yarn install
+yarn tsc
 ```
 
 # Contributing
