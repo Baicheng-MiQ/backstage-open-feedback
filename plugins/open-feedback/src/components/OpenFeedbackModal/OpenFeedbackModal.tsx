@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  Fab,
 } from '@material-ui/core';
 import Rating from '@mui/material/Rating';
 import React, { useEffect, useState } from 'react';
@@ -22,11 +23,13 @@ import { SubmitFeedback } from '@baicheng-michael/backstage-plugin-open-feedback
 import { SidebarItem } from '@backstage/core-components';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 
-export type SidebarOpenfeedbackProps = {
+export type ButtonOpenfeedbackProps = {
   icon?: IconComponent;
+  floating?: boolean;
+  style?: React.CSSProperties;
 };
 
-export const OpenFeedbackModal = (props: SidebarOpenfeedbackProps) => {
+export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
   const [rating, setRating] = useState<number | null>(2);
   const [comment, setComment] = useState('');
   const [anonymous, setAnonymous] = useState(false);
@@ -34,7 +37,7 @@ export const OpenFeedbackModal = (props: SidebarOpenfeedbackProps) => {
   const feedbackApi = useApi(openFeedbackBackendRef);
   const identity = useApi(identityApiRef);
   const Icon = props.icon ? props.icon : ThumbUpAltIcon;
-
+  const Floating = props.floating ?? false;
   const [userName, fetchUserName] = useAsyncFn(async () => {
     return await (
       await identity.getProfileInfo()
@@ -69,11 +72,23 @@ export const OpenFeedbackModal = (props: SidebarOpenfeedbackProps) => {
 
   return (
     <>
-      <SidebarItem
-        icon={Icon}
-        text="OpenFeedback"
-        onClick={() => setOpen(true)}
-      />
+      {!Floating ? (
+        <SidebarItem
+          icon={Icon}
+          text="OpenFeedback"
+          onClick={() => setOpen(true)}
+        />
+      ) : (
+        <Fab
+          color="primary"
+          variant="extended"
+          onClick={() => setOpen(true)}
+          style={props.style}
+        >
+          <Icon style={{ marginRight: 4 }} />
+          Feedback
+        </Fab>
+      )}
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>Submit Feedback</DialogTitle>
         <DialogContent>
