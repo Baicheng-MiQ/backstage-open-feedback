@@ -15,6 +15,7 @@ const mockOpenFeedbackBackendApi = {
     Promise.resolve([
       {
         id: 1,
+        url: 'https://backstage.io',
         rating: 5,
         comment: 'Very good!, much test!',
         userRef: 'Baz',
@@ -205,6 +206,7 @@ describe('FeedbackCards', () => {
       Promise.resolve([
         {
           id: 1,
+          url: 'https://backstage.io',
           rating: 5,
           comment: 'Very good!, much test!',
           userRef: 'Baz',
@@ -212,6 +214,7 @@ describe('FeedbackCards', () => {
         },
         {
           id: 2,
+          url: 'https://backstage.io',
           rating: 4,
           comment: 'Good job!',
           userRef: 'Anonymous',

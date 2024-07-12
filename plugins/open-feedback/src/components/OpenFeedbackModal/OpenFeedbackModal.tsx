@@ -30,7 +30,7 @@ export type ButtonOpenfeedbackProps = {
 };
 
 export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
-  const [rating, setRating] = useState<number | null>(2);
+  const [rating, setRating] = useState<number | null>(5);
   const [comment, setComment] = useState('');
   const [anonymous, setAnonymous] = useState(false);
   const [open, setOpen] = useState(false);
@@ -57,6 +57,7 @@ export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
 
     const feedback: SubmitFeedback = {
       rating: rating ?? 0,
+      url: window.location.href,
       comment: comment,
       userRef: anonymous ? 'Anonymous' : userName.value ?? 'unknown',
     };
@@ -64,7 +65,7 @@ export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
     await feedbackApi.submitFeedback(feedback);
 
     // reset form
-    setRating(2);
+    setRating(5);
     setComment('');
     setAnonymous(false);
     handleClose();
@@ -102,6 +103,15 @@ export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
                     setRating(newValue);
                   }
                 }}
+              />
+            </Box>
+            <Box mb={2}>
+              <TextField
+                name="url"
+                label="URL"
+                value={window.location.href}
+                disabled
+                fullWidth
               />
             </Box>
             <Box mb={2}>
