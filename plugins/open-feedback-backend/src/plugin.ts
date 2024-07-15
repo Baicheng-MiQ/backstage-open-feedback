@@ -21,11 +21,13 @@ export const openFeedbackPlugin = createBackendPlugin({
         httpRouter: coreServices.httpRouter,
         auth: coreServices.auth,
         httpAuth: coreServices.httpAuth,
+        config: coreServices.rootConfig,
       },
-      async init({ database, discovery, logger, httpRouter, auth, httpAuth }) {
+      async init({ database, discovery, logger, httpRouter, auth, httpAuth, config }) {
         const databaseHandler = await OpenFeedbackDatabaseHandler.create(
           database,
         );
+        // console.log('config', config.get('integrations.slack.webhookUrl'));
         httpRouter.use(
           await createRouter({
             databaseHandler,
@@ -33,6 +35,7 @@ export const openFeedbackPlugin = createBackendPlugin({
             logger,
             auth,
             httpAuth,
+            config,
           }),
         );
       },

@@ -7,11 +7,13 @@ import {
   HttpAuthService,
   LoggerService,
 } from '@backstage/backend-plugin-api';
+import { Config } from '@backstage/config';
 import express, { Request, Response } from 'express';
 import Router from 'express-promise-router';
 import { body } from 'express-validator';
 import { OpenFeedbackDatabaseHandler } from '../database/DatabaseHandler';
 import { SubmitFeedback } from '@baicheng-michael/backstage-plugin-open-feedback-common';
+import { sendFeedbackToSlack } from './slack';
 
 export interface RouterOptions {
   databaseHandler: OpenFeedbackDatabaseHandler;
@@ -19,6 +21,7 @@ export interface RouterOptions {
   logger: LoggerService;
   auth?: AuthService;
   httpAuth?: HttpAuthService;
+  config?: Config;
 }
 
 const feedbackValidator = [
@@ -48,10 +51,10 @@ export async function createRouter(
       const { rating, url, comment, userRef } = req.body;
 
       const feedback: SubmitFeedback = { userRef, url, rating, comment };
-
       try {
-        await databaseHandler.addFeedback(feedback);
-        logger.info(`Received feedback from ${userRef} with rating ${rating}`);
+        if (options.config && options.config.get('integrations.slack.webhookUrl')) {
+          await sendFeedbackToSlack(feedback, options.config.get('integrations.slack.webhookUrl'));
+        }
         res.status(201).json({ status: 'ok', message: 'Feedback added' });
       } catch (error) {
         logger.error(`Failed to add feedback: ${error}`);
