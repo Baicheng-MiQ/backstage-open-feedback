@@ -6,6 +6,7 @@ import {
   Grid,
   Box,
   Typography,
+  Link,
   IconButton,
   Button,
   Dialog,
@@ -123,12 +124,15 @@ export const FeedbackCards = () => {
               }
             >
               <Typography variant="body1">{item.comment}</Typography>
-              <Typography
-                variant="caption"
-                title={item.url}
-                color="textSecondary"
-              >
-                {item.url}
+              <Typography variant="caption" color="textSecondary">
+                <Link
+                  href={item.url}
+                  title={item.url}
+                  color="inherit"
+                  underline="hover"
+                >
+                  {item.url}
+                </Link>
               </Typography>
               <Box
                 pt={2}
