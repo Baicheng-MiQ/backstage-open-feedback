@@ -126,13 +126,16 @@ make build
 ```
 
 # Publishing
+
 ```bash
 cd plugins/open-feedback # or plugins/open-feedback-backend or plugins/open-feedback-common
 make publish
 ```
 
 # TroubleShooting
+
 ## Build Error or strange behavior
+
 ```bash
 rm -rf node_modules
 rm -rf dist-types
