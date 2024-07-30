@@ -124,16 +124,11 @@ export const FeedbackCards = () => {
               }
             >
               <Typography variant="body1">{item.comment}</Typography>
-              <Typography variant="caption" color="textSecondary">
-                <Link
-                  href={item.url}
-                  title={item.url}
-                  color="inherit"
-                  underline="hover"
-                >
-                  {item.url}
-                </Link>
-              </Typography>
+              {item.url && (
+                <Typography title={item.url} color="textSecondary">
+                  Location: {item.url}
+                </Typography>
+              )}
               <Box
                 pt={2}
                 width="100%"
