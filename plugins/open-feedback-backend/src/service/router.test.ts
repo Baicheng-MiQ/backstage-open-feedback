@@ -3,7 +3,7 @@ import express from 'express';
 import request from 'supertest';
 import { createRouter } from './router';
 import { OpenFeedbackDatabaseHandler } from '../database/DatabaseHandler';
-import { AppFeedback } from '@parsifal-m/backstage-plugin-open-feedback-common';
+import { AppFeedback } from '@baicheng-michael/backstage-plugin-open-feedback-common';
 
 const mockDatabaseHandler = {
   addFeedback: jest.fn(),

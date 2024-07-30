@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SubmitFeedback } from '@parsifal-m/backstage-plugin-open-feedback-common';
+import { SubmitFeedback } from '@baicheng-michael/backstage-plugin-open-feedback-common';
 import { SidebarItem } from '@backstage/core-components';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import {
@@ -118,15 +118,6 @@ export const OpenFeedbackModal = (props: ButtonOpenfeedbackProps) => {
                 label="Location"
                 value={url}
                 onChange={event => setUrl(event.target.value)}
-                fullWidth
-              />
-            </Box>
-            <Box mb={2}>
-              <TextField
-                name="url"
-                label="URL"
-                value={window.location.href}
-                disabled
                 fullWidth
               />
             </Box>
